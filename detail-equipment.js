@@ -1,12 +1,12 @@
-import products from "./products.js";
-import cart from "./cart.js";
+import loadProducts from "/SPEEDMOTO/loadProducts.js"; 
+import cart from "/SPEEDMOTO/cart.js";  
 
 let listProduct = document.getElementById("listProduct");
 let app = document.getElementById("app");
 let temporaryContent = document.getElementById("temporaryContent");
 
 const loadTemplate = () => {
-  fetch("Equipment-page.html")
+  fetch("/SPEEDMOTO/Equipment-page.html")
     .then((response) => response.text())
     .then((html) => {
       app.innerHTML = html;
@@ -22,7 +22,7 @@ const initApp = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
   let thisProduct = products.filter((value) => value.id == productId)[0];
   if (!thisProduct) {
-    window.location.href = "Main-equipment-page.html";
+    window.location.href = "/SPEEDMOTO/Main-equipment-page.html";
   }
 
   let detail = document.querySelector(".detail");
@@ -36,7 +36,7 @@ const initApp = () => {
   products.forEach((product) => {
     let newProduct = document.createElement("div");
     newProduct.classList.add("item");
-    newProduct.innerHTML = `<a href="equipment-detail.html?id=${product.id}">
+    newProduct.innerHTML = `<a href="/SPEEDMOTO/equipment-detail.html?id=${product.id}">
             <img src="${product.image}">
         </a>
         <h2>${product.name}</h2>
@@ -49,3 +49,4 @@ const initApp = () => {
     listProductHTML.appendChild(newProduct);
   });
 };
+
