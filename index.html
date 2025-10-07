@@ -500,25 +500,19 @@
         })
         .then((module) => {
           console.log("✅ cart.js loaded");
-          module.default();
-          console.log("✅ Cart initialized!");
+          // Wait for navigation to load
+          setTimeout(() => {
+            module.default();
+            console.log("✅ Cart initialized!");
+          }, 100);
         })
         .catch((error) => {
           console.error("❌ Cart initialization failed:", error);
         });
     </script>
-    
-    <!-- ADD THIS DEBUG SCRIPT -->
-    <script>
-      console.log("🔍 Checking if cart script exists...");
-      console.log("Cart elements:", {
-        cartTab: document.querySelector('.cartTab'),
-        iconCart: document.querySelector('.icon-cart'),
-        listCart: document.querySelector('.listCart')
-      });
-    </script>
   </body>
 </html>
+
 
 
 
