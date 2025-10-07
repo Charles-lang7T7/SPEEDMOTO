@@ -6,7 +6,7 @@ let temporaryContent = document.getElementById("temporaryContent");
 
 // load layout file
 const loadTemplate = () => {
-  fetch("Equipment-page.html")
+  fetch("/SPEEDMOTO/Equipment-page.html")
     .then((response) => response.text())
     .then((html) => {
       app.innerHTML = html;
@@ -26,7 +26,7 @@ const initApp = () => {
   products.forEach((product) => {
     let newProduct = document.createElement("div");
     newProduct.classList.add("item");
-    newProduct.innerHTML = `<a href="equipment-detail.html?id=${product.id}">
+    newProduct.innerHTML = `<a href="/SPEEDMOTO/equipment-detail.html?id=${product.id}">
              <img src="${product.image}">
          </a>
          <h2>${product.name}</h2>
@@ -39,5 +39,6 @@ const initApp = () => {
     listProductHTML.appendChild(newProduct);
   });
 };
+
 
 
