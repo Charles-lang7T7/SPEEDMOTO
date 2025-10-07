@@ -219,14 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("=== INITIALIZING CART ===");
 
     // Load products first, then cart
-    import("/loadProducts.js")
+    import("/SPEEDMOTO/loadProducts.js")
       .then((module) => {
         console.log("✅ Products module loaded");
         return module.default();
       })
       .then(() => {
         console.log("✅ Products loaded, now loading cart");
-        return import("/cart.js");
+        return import("/SPEEDMOTO/cart.js");
       })
       .then((module) => {
         console.log("✅ Cart module loaded");
@@ -238,3 +238,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+
