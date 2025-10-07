@@ -41,9 +41,29 @@
 
     <script src="detail-equipment.js" type="module"></script>
     <script src="script00.js"></script>
-    <script src="navigation.js"></script>
-    https://github.com/Charles-lang7T7/SPEEDMOTO.git
+    <script type="module">
+      console.log("🛒 Starting cart initialization...");
+      import("/SPEEDMOTO/loadProducts.js")
+        .then((module) => {
+          console.log("✅ loadProducts.js loaded");
+          return module.default();
+        })
+        .then(() => {
+          console.log("✅ Products loaded, loading cart...");
+          // Try without .js extension
+          return import("/SPEEDMOTO/cart");
+        })
+        .then((module) => {
+          console.log("✅ cart.js loaded");
+          module.default();
+          console.log("✅ Cart initialized!");
+        })
+        .catch((error) => {
+          console.error("❌ Cart initialization failed:", error);
+        });
+    </script>
   </body>
 </html>
+
 
 
