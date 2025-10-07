@@ -80,7 +80,7 @@ const cart = () => {
           console.warn(`❌ Product ${item.product_id} not found in products`);
           newItem.innerHTML = `
             <div class="image">
-              <img src="/Structure/Logo-image/ducati_id.png" alt="Not found">
+              <img src="ducati_id.png" alt="Not found">
             </div>
             <div class="name">
               Product ${item.product_id} (Not Available)
@@ -153,5 +153,6 @@ const cart = () => {
 };
 
 export default cart;
+
 
 
