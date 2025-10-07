@@ -29,5 +29,29 @@
 
     <script src="script00.js"></script>
     <script src="navigation.js"></script>
+    <script type="module">
+      console.log("🛒 Starting cart initialization...");
+      import("/SPEEDMOTO/loadProducts.js")
+        .then((module) => {
+          console.log("✅ loadProducts.js loaded");
+          return module.default();
+        })
+        .then(() => {
+          console.log("✅ Products loaded, loading cart...");
+          return import("/SPEEDMOTO/cart.js");
+        })
+        .then((module) => {
+          console.log("✅ cart.js loaded");
+          
+          setTimeout(() => {
+            module.default();
+            console.log("✅ Cart initialized!");
+          }, 500); 
+        })
+        .catch((error) => {
+          console.error("❌ Cart initialization failed:", error);
+        });
+    </script>
   </body>
 </html>
+
