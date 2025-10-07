@@ -213,5 +213,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ❌ REMOVED: initializeCart() function - Cart is already initialized in HTML files
 });
+
