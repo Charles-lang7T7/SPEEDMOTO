@@ -41,6 +41,7 @@
 
     <script src="detail-equipment.js" type="module"></script>
     <script src="script00.js"></script>
+    <script src="navigation.js"></script> 
     <script type="module">
       console.log("🛒 Starting cart initialization...");
       import("/SPEEDMOTO/loadProducts.js")
@@ -50,8 +51,7 @@
         })
         .then(() => {
           console.log("✅ Products loaded, loading cart...");
-          // Try without .js extension
-          return import("/SPEEDMOTO/cart");
+          return import("/SPEEDMOTO/cart.js");  
         })
         .then((module) => {
           console.log("✅ cart.js loaded");
@@ -64,6 +64,7 @@
     </script>
   </body>
 </html>
+
 
 
 
