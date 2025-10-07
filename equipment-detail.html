@@ -51,12 +51,15 @@
         })
         .then(() => {
           console.log("✅ Products loaded, loading cart...");
-          return import("/SPEEDMOTO/cart.js");  
+          return import("/SPEEDMOTO/cart.js");
         })
         .then((module) => {
           console.log("✅ cart.js loaded");
-          module.default();
-          console.log("✅ Cart initialized!");
+          
+          setTimeout(() => {
+            module.default();
+            console.log("✅ Cart initialized!");
+          }, 500); 
         })
         .catch((error) => {
           console.error("❌ Cart initialization failed:", error);
@@ -64,6 +67,7 @@
     </script>
   </body>
 </html>
+
 
 
 
