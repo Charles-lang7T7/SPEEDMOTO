@@ -31,11 +31,11 @@
         })
         .then((module) => {
           console.log("✅ cart.js loaded");
-          // Wait for navigation to load
+          
           setTimeout(() => {
             module.default();
             console.log("✅ Cart initialized!");
-          }, 100);
+          }, 500); 
         })
         .catch((error) => {
           console.error("❌ Cart initialization failed:", error);
@@ -43,5 +43,6 @@
     </script>
   </body>
 </html>
+
 
 
