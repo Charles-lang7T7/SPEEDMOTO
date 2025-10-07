@@ -1,4 +1,4 @@
-import loadProducts from "/loadProducts.js";
+import loadProducts from "./loadProducts.js";
 
 const cart = () => {
   let listCartHTML = document.querySelector(".listCart");
@@ -153,3 +153,4 @@ const cart = () => {
 };
 
 export default cart;
+
