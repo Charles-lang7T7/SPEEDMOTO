@@ -507,8 +507,19 @@
           console.error("❌ Cart initialization failed:", error);
         });
     </script>
+    
+    <!-- ADD THIS DEBUG SCRIPT -->
+    <script>
+      console.log("🔍 Checking if cart script exists...");
+      console.log("Cart elements:", {
+        cartTab: document.querySelector('.cartTab'),
+        iconCart: document.querySelector('.icon-cart'),
+        listCart: document.querySelector('.listCart')
+      });
+    </script>
   </body>
 </html>
+
 
 
 
