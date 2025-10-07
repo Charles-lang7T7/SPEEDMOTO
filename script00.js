@@ -15,12 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
       initializeMenu();
       initializeScrollReveal();
       initializeSwiper();
-      initializeCart(); // ADDED: Initialize cart after navigation
+      // ❌ REMOVED: initializeCart() - Cart is already initialized in HTML
     })
     .catch((error) => {
       console.error("❌ Failed to load navigation:", error);
-      // Even if navigation fails, try to initialize cart
-      initializeCart();
+      // ❌ REMOVED: initializeCart() - Cart is already initialized in HTML
     });
 
   function initializeMenu() {
@@ -214,28 +213,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ADDED: Cart initialization function
-  function initializeCart() {
-    console.log("=== INITIALIZING CART ===");
-
-    // Load products first, then cart
-    import("/SPEEDMOTO/loadProducts.js")
-      .then((module) => {
-        console.log("✅ Products module loaded");
-        return module.default();
-      })
-      .then(() => {
-        console.log("✅ Products loaded, now loading cart");
-        return import("/SPEEDMOTO/cart.js");
-      })
-      .then((module) => {
-        console.log("✅ Cart module loaded");
-        module.default();
-        console.log("✅ Cart initialized successfully");
-      })
-      .catch((error) => {
-        console.error("❌ Error initializing cart:", error);
-      });
-  }
+  // ❌ REMOVED: initializeCart() function - Cart is already initialized in HTML files
 });
-
