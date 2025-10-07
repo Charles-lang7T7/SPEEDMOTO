@@ -68,3 +68,4 @@ const loadProducts = () => {
 
 export default loadProducts;
 
+
