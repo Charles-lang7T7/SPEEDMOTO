@@ -1,4 +1,4 @@
-import loadProducts from "/SPEEDMOTO/loadProducts.js"; 
+import products from "/SPEEDMOTO/products.js"; 
 import cart from "/SPEEDMOTO/cart.js";  
 
 let listProduct = document.getElementById("listProduct");
@@ -49,4 +49,5 @@ const initApp = () => {
     listProductHTML.appendChild(newProduct);
   });
 };
+
 
