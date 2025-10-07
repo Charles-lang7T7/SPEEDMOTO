@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("=== COMPREHENSIVE MENU DEBUG ===");
 
   // Load navigation from separate file
-  fetch("navigation.html")
+  fetch("/SPEEDMOTO/navigation.html")
     .then((response) => {
       if (!response.ok)
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -215,3 +215,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
  
 });
+
