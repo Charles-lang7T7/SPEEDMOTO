@@ -487,17 +487,28 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script00.js"></script>
     <script src="navigation.js"></script>
-    <script>
-      // Test if files exist
-      fetch('/SPEEDMOTO/loadProducts.js')
-        .then(response => console.log('loadProducts:', response.ok))
-        .catch(error => console.log('loadProducts error:', error));
-        
-      fetch('/SPEEDMOTO/cart.js')  
-        .then(response => console.log('cart.js:', response.ok))
-        .catch(error => console.log('cart.js error:', error));
+    <script type="module">
+      console.log("🛒 Starting cart initialization...");
+      import("/SPEEDMOTO/loadProducts.js")
+        .then((module) => {
+          console.log("✅ loadProducts.js loaded");
+          return module.default();
+        })
+        .then(() => {
+          console.log("✅ Products loaded, loading cart...");
+          return import("/SPEEDMOTO/cart.js");
+        })
+        .then((module) => {
+          console.log("✅ cart.js loaded");
+          module.default();
+          console.log("✅ Cart initialized!");
+        })
+        .catch((error) => {
+          console.error("❌ Cart initialization failed:", error);
+        });
     </script>
   </body>
 </html>
+
 
 
