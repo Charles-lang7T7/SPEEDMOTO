@@ -235,6 +235,10 @@ body.activeTabCart .cartTab {
   .detail {
     grid-template-columns: 40% 1fr;
   }
+  .detail .image img {
+    position: absolute;
+    bottom: 100px;
+  }
 }
 
 /* mobile */
@@ -282,10 +286,6 @@ body.activeTabCart .cartTab {
   }
   .detail .buttons {
     justify-content: center;
-  }
-  .detail .image img {
-    position: absolute;
-    bottom: 100px;
   }
 }
 .listCart .item {
@@ -373,4 +373,5 @@ body.activeTabCart .cartTab {
 .listCart .item:nth-child(even) {
   background-color: rgb(212, 212, 212);
 }
+
 
