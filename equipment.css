@@ -270,7 +270,9 @@ body.activeTabCart .cartTab {
     text-align: justify;
   }
   .detail .image img {
-    margin-top: 80px;
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: -100px;
     width: 100%;
   }
   .detail .name {
@@ -373,5 +375,6 @@ body.activeTabCart .cartTab {
 .listCart .item:nth-child(even) {
   background-color: rgb(212, 212, 212);
 }
+
 
 
